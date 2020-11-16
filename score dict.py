@@ -95,8 +95,10 @@ while True: # 입력 숫자가 9가 나올때 까지 반복
     #입력된 학생 모두의 성적 평균을 나타나도록 만들었습니다.
     elif sel == 6:
         print("\n\n>>>성적평균<<<")
-        for key, value in score.items():  # score에 있는 키=name, 값=info를 전체를 가져온다  
+        name = input('이름=>')
+        while name in score:
+            value = score[name]
             sum = value['영어'] + value['수학'] # 키에 해당하는 영어, 수학 성적의 합계를 구함
-            print("이름 :", key)
             print("평균 :", sum/2)       #두 과목의 평균
             print("---------------------다음 학생") # 학생구분
+            name = input('이름=>')
